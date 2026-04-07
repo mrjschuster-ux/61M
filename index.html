@@ -76,7 +76,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(61,43,31,0.9
 .unit-card:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(61,43,31,0.12)}
 .unit-card.duplicate{border-style:dashed;border-color:rgba(61,43,31,0.15)}
 .unit-thumb{height:160px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.unit-thumb-label{font-family:'Playfair Display',serif;font-size:13px;color:rgba(255,255,255,0.5);font-weight:400;font-style:italic;text-align:center;padding:0 12px;line-height:1.4;position:relative;z-index:1}
+.unit-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:sepia(0.15)}
 .unit-badge{position:absolute;top:10px;left:10px;background:var(--terra);color:var(--cream);font-size:7px;letter-spacing:0.18em;text-transform:uppercase;padding:3px 8px;font-weight:500;border-radius:2px}
 .unit-badge.dupe{background:var(--stone)}
 .unit-info{padding:18px}
@@ -223,8 +223,8 @@ footer{background:#1e1108;padding:28px 80px;display:flex;align-items:center;just
     <div class="column-label">The Triplex</div>
     <div class="units-grid-1">
       <div class="unit-card" onclick="openModal('triplex')">
-        <div class="unit-thumb" style="background:linear-gradient(145deg,#5c2d14,#3d2b1f)">
-          <div class="unit-thumb-label">The Triplex</div>
+        <div class="unit-thumb" style="background:#3d2b1f">
+          <img src="assets/floor-plans/triplex-fp1.png" alt="The Triplex floor plan">
           <div class="unit-badge">Available</div>
         </div>
         <div class="unit-info">
@@ -248,8 +248,8 @@ footer{background:#1e1108;padding:28px 80px;display:flex;align-items:center;just
     <div class="units-grid-3">
 
       <div class="unit-card" onclick="openModal('rr1')">
-        <div class="unit-thumb" style="background:linear-gradient(145deg,#7a3e20,#5c2d14)">
-          <div class="unit-thumb-label">Right Rear<br>Floor 1</div>
+        <div class="unit-thumb" style="background:#3d2b1f">
+          <img src="assets/floor-plans/rr1-fp.png" alt="Right Rear Floor 1 floor plan">
           <div class="unit-badge">Available</div>
         </div>
         <div class="unit-info">
@@ -266,8 +266,8 @@ footer{background:#1e1108;padding:28px 80px;display:flex;align-items:center;just
       </div>
 
       <div class="unit-card" onclick="openModal('rr2')">
-        <div class="unit-thumb" style="background:linear-gradient(145deg,#a0522d,#7a3e20)">
-          <div class="unit-thumb-label">Right Rear<br>Floor 2</div>
+        <div class="unit-thumb" style="background:#3d2b1f">
+          <img src="assets/floor-plans/rr2-fp.png" alt="Right Rear Floor 2 floor plan">
           <div class="unit-badge">Available</div>
         </div>
         <div class="unit-info">
@@ -284,8 +284,8 @@ footer{background:#1e1108;padding:28px 80px;display:flex;align-items:center;just
       </div>
 
       <div class="unit-card" onclick="openModal('rr3')">
-        <div class="unit-thumb" style="background:linear-gradient(145deg,#c97a4a,#a0522d)">
-          <div class="unit-thumb-label">Right Rear<br>Floor 3</div>
+        <div class="unit-thumb" style="background:#3d2b1f">
+          <img src="assets/floor-plans/rr3-fp.png" alt="Right Rear Floor 3 floor plan">
           <div class="unit-badge">Available</div>
         </div>
         <div class="unit-info">
@@ -310,8 +310,8 @@ footer{background:#1e1108;padding:28px 80px;display:flex;align-items:center;just
     <div class="units-grid-4">
 
       <div class="unit-card duplicate" onclick="openModal('lf1')">
-        <div class="unit-thumb" style="background:linear-gradient(145deg,#6b5744,#3d2b1f)">
-          <div class="unit-thumb-label">Left Column<br>Floor 1</div>
+        <div class="unit-thumb" style="background:#3d2b1f">
+          <img src="assets/floor-plans/lf4-fp.png" alt="Left Column Floor 1 floor plan">
           <div class="unit-badge dupe">Available</div>
         </div>
         <div class="unit-info">
@@ -329,8 +329,8 @@ footer{background:#1e1108;padding:28px 80px;display:flex;align-items:center;just
       </div>
 
       <div class="unit-card duplicate" onclick="openModal('lf2')">
-        <div class="unit-thumb" style="background:linear-gradient(145deg,#7a6252,#4a3525)">
-          <div class="unit-thumb-label">Left Column<br>Floor 2</div>
+        <div class="unit-thumb" style="background:#3d2b1f">
+          <img src="assets/floor-plans/lf4-fp.png" alt="Left Column Floor 2 floor plan">
           <div class="unit-badge dupe">Available</div>
         </div>
         <div class="unit-info">
@@ -348,8 +348,8 @@ footer{background:#1e1108;padding:28px 80px;display:flex;align-items:center;just
       </div>
 
       <div class="unit-card duplicate" onclick="openModal('lf3')">
-        <div class="unit-thumb" style="background:linear-gradient(145deg,#8a7060,#5a3e2f)">
-          <div class="unit-thumb-label">Left Column<br>Floor 3</div>
+        <div class="unit-thumb" style="background:#3d2b1f">
+          <img src="assets/floor-plans/lf4-fp.png" alt="Left Column Floor 3 floor plan">
           <div class="unit-badge dupe">Available</div>
         </div>
         <div class="unit-info">
@@ -367,8 +367,8 @@ footer{background:#1e1108;padding:28px 80px;display:flex;align-items:center;just
       </div>
 
       <div class="unit-card" onclick="openModal('lf4')">
-        <div class="unit-thumb" style="background:linear-gradient(145deg,#8a7560,#5c2d14)">
-          <div class="unit-thumb-label">Left Column<br>Floor 4</div>
+        <div class="unit-thumb" style="background:#3d2b1f">
+          <img src="assets/floor-plans/lf4-fp.png" alt="Left Column Floor 4 floor plan">
           <div class="unit-badge">Available</div>
         </div>
         <div class="unit-info">
@@ -589,9 +589,8 @@ footer{background:#1e1108;padding:28px 80px;display:flex;align-items:center;just
         <iframe class="tour-embed" id="tour-iframe" src="" allowfullscreen allow="xr-spatial-tracking"></iframe>
         <p style="font-size:11px;color:#9ca3af;letter-spacing:0.04em">Navigate using your mouse or touch. Use the dollhouse icon for a full spatial overview.</p>
       </div>
-      <div class="modal-panel pdf-panel" id="tab-plans">
-        <iframe class="pdf-embed" id="plans-iframe" src=""></iframe>
-        <div class="pdf-download-bar"><span id="plans-label">Floor Plan PDF</span><a class="pdf-dl-btn" id="plans-dl" href="#" download>Download PDF</a></div>
+      <div class="modal-panel" id="tab-plans" style="padding:28px">
+        <div id="plans-img-container"></div>
       </div>
       <div class="modal-panel pdf-panel" id="tab-report">
         <iframe class="pdf-embed" id="report-iframe" src=""></iframe>
@@ -603,14 +602,14 @@ footer{background:#1e1108;padding:28px 80px;display:flex;align-items:center;just
 
 <script>
 const data = {
-  triplex:{eyebrow:'Residence',title:'The Triplex',sqft:'1,968 sq ft',tour:'https://my.matterport.com/show/?m=9fNXKQ4TqEK&mls=1',plans:'assets/floor-plans/61t.pdf',report:'assets/floor-plans/61t.pdf'},
-  rr1:{eyebrow:'Right Rear Column',title:'Floor 1',sqft:'1,055 sq ft',tour:'https://my.matterport.com/show/?m=jiaHgmDipRc&mls=1',plans:'assets/floor-plans/61rrf1.pdf',report:'assets/floor-plans/61rrf1.pdf'},
-  rr2:{eyebrow:'Right Rear Column',title:'Floor 2',sqft:'1,209 sq ft',tour:'https://my.matterport.com/show/?m=CCDqx92fr7U&mls=1',plans:'assets/floor-plans/61rrf2.pdf',report:'assets/floor-plans/61rrf2.pdf'},
-  rr3:{eyebrow:'Right Rear Column',title:'Floor 3',sqft:'1,155 sq ft',tour:'https://my.matterport.com/show/?m=KevbR12LXAX&mls=1',plans:'assets/floor-plans/61rrf3.pdf',report:'assets/floor-plans/61rrf3.pdf'},
-  lf1:{eyebrow:'Left Column',title:'Floor 1',sqft:'1,360 sq ft',tour:'https://my.matterport.com/show/?m=D8v8LFPUm4V&mls=1',plans:'assets/floor-plans/61lf4.pdf',report:'assets/floor-plans/61lf4.pdf'},
-  lf2:{eyebrow:'Left Column',title:'Floor 2',sqft:'1,360 sq ft',tour:'https://my.matterport.com/show/?m=D8v8LFPUm4V&mls=1',plans:'assets/floor-plans/61lf4.pdf',report:'assets/floor-plans/61lf4.pdf'},
-  lf3:{eyebrow:'Left Column',title:'Floor 3',sqft:'1,360 sq ft',tour:'https://my.matterport.com/show/?m=D8v8LFPUm4V&mls=1',plans:'assets/floor-plans/61lf4.pdf',report:'assets/floor-plans/61lf4.pdf'},
-  lf4:{eyebrow:'Left Column',title:'Floor 4',sqft:'1,360 sq ft',tour:'https://my.matterport.com/show/?m=D8v8LFPUm4V&mls=1',plans:'assets/floor-plans/61lf4.pdf',report:'assets/floor-plans/61lf4.pdf'}
+  triplex:{eyebrow:'Residence',title:'The Triplex',sqft:'1,968 sq ft',tour:'https://my.matterport.com/show/?m=9fNXKQ4TqEK&mls=1',plans:['assets/floor-plans/triplex-fp1.png','assets/floor-plans/triplex-fp2.png','assets/floor-plans/triplex-fp3.png'],report:'assets/floor-plans/61t.pdf'},
+  rr1:{eyebrow:'Right Rear Column',title:'Floor 1',sqft:'1,055 sq ft',tour:'https://my.matterport.com/show/?m=jiaHgmDipRc&mls=1',plans:['assets/floor-plans/rr1-fp.png'],report:'assets/floor-plans/61rrf1.pdf'},
+  rr2:{eyebrow:'Right Rear Column',title:'Floor 2',sqft:'1,209 sq ft',tour:'https://my.matterport.com/show/?m=CCDqx92fr7U&mls=1',plans:['assets/floor-plans/rr2-fp.png'],report:'assets/floor-plans/61rrf2.pdf'},
+  rr3:{eyebrow:'Right Rear Column',title:'Floor 3',sqft:'1,155 sq ft',tour:'https://my.matterport.com/show/?m=KevbR12LXAX&mls=1',plans:['assets/floor-plans/rr3-fp.png'],report:'assets/floor-plans/61rrf3.pdf'},
+  lf1:{eyebrow:'Left Column',title:'Floor 1',sqft:'1,360 sq ft',tour:'https://my.matterport.com/show/?m=D8v8LFPUm4V&mls=1',plans:['assets/floor-plans/lf4-fp.png'],report:'assets/floor-plans/61lf4.pdf'},
+  lf2:{eyebrow:'Left Column',title:'Floor 2',sqft:'1,360 sq ft',tour:'https://my.matterport.com/show/?m=D8v8LFPUm4V&mls=1',plans:['assets/floor-plans/lf4-fp.png'],report:'assets/floor-plans/61lf4.pdf'},
+  lf3:{eyebrow:'Left Column',title:'Floor 3',sqft:'1,360 sq ft',tour:'https://my.matterport.com/show/?m=D8v8LFPUm4V&mls=1',plans:['assets/floor-plans/lf4-fp.png'],report:'assets/floor-plans/61lf4.pdf'},
+  lf4:{eyebrow:'Left Column',title:'Floor 4',sqft:'1,360 sq ft',tour:'https://my.matterport.com/show/?m=D8v8LFPUm4V&mls=1',plans:['assets/floor-plans/lf4-fp.png'],report:'assets/floor-plans/61lf4.pdf'}
 };
 
 let currentUnit = null;
@@ -638,10 +637,12 @@ function switchTab(tab) {
   if (tab === 'tour') {
     document.getElementById('tour-iframe').src = d.tour;
   } else if (tab === 'plans') {
-    document.getElementById('plans-iframe').src = d.plans;
-    document.getElementById('plans-label').textContent = d.eyebrow + ' ' + d.title + ' — Floor Plan';
-    document.getElementById('plans-dl').href = d.plans;
-    document.getElementById('plans-dl').download = (d.eyebrow + '_' + d.title).replace(/\s/g,'_') + '_FloorPlan.pdf';
+    const container = document.getElementById('plans-img-container');
+    container.innerHTML = d.plans.map((src,i) => `
+      <div style="margin-bottom:${i < d.plans.length-1 ? '16px' : '0'}">
+        ${d.plans.length > 1 ? `<div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone);margin-bottom:8px;font-family:'DM Sans',sans-serif">Floor ${i+1}</div>` : ''}
+        <img src="${src}" style="width:100%;display:block;border:1px solid var(--cream-dim);border-radius:2px" alt="Floor plan ${i+1}">
+      </div>`).join('');
   } else if (tab === 'report') {
     document.getElementById('report-iframe').src = d.report;
     document.getElementById('report-label').textContent = d.eyebrow + ' ' + d.title + ' — Property Report';
