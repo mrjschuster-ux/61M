@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>61 Montebello — Jamaica Plain Condominiums</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --terra:#a0522d;--terra-dark:#7a3e20;--terra-deep:#5c2d14;--terra-light:#c97a4a;
+  --cream:#f7f2ea;--cream-warm:#efe8d8;--cream-dim:#d4c9b5;--cream-dark:#b8a990;
+  --bark:#3d2b1f;--bark-mid:#5a3e2f;--white:#ffffff;--stone:#8a7560;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--bark);font-family:'DM Sans',sans-serif;font-weight:300}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(61,43,31,0.96);backdrop-filter:blur(8px);padding:18px 48px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--cream);letter-spacing:0.08em}
+.nav-logo span{color:var(--terra-light);font-style:italic}
+.nav-links{display:flex;gap:36px}
+.nav-links a{color:var(--cream-dim);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;font-weight:400;transition:color 0.2s}
+.nav-links a:hover{color:var(--terra-light)}
+.nav-cta{background:transparent;border:1px solid var(--terra-light);color:var(--terra-light);font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;padding:8px 20px;cursor:pointer;font-weight:400;transition:all 0.2s}
+.nav-cta:hover{background:var(--terra-light);color:var(--bark)}
+
+.hero{min-height:100vh;background:var(--bark);position:relative;display:flex;align-items:flex-end;overflow:hidden}
+.hero-texture{position:absolute;inset:0;opacity:0.06;background-image:radial-gradient(circle at 1px 1px,var(--terra-light) 1px,transparent 0);background-size:32px 32px}
+.hero-arc{position:absolute;bottom:-1px;left:0;right:0;height:120px;background:var(--cream);clip-path:ellipse(55% 100% at 50% 100%)}
+.hero-circle{position:absolute;top:-80px;right:-80px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(160,82,45,0.12)}
+.hero-circle2{position:absolute;top:-40px;right:-40px;width:400px;height:400px;border-radius:50%;border:1px solid rgba(160,82,45,0.08)}
+.hero-content{position:relative;z-index:2;padding:0 80px 140px;max-width:760px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--terra-light);margin-bottom:28px;font-weight:400}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--terra-light)}
+.hero-title{font-family:'Playfair Display',serif;font-size:82px;font-weight:400;line-height:0.95;color:var(--cream);margin-bottom:12px}
+.hero-title em{font-style:italic;color:var(--terra-light)}
+.hero-sub{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;font-style:italic;color:var(--cream-dim);margin-bottom:36px;letter-spacing:0.02em}
+.hero-desc{font-size:13px;line-height:1.85;color:rgba(212,201,181,0.65);max-width:460px;margin-bottom:52px}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{background:var(--terra);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;padding:14px 32px;border:none;cursor:pointer;font-weight:500;transition:all 0.2s;border-radius:2px}
+.btn-primary:hover{background:var(--terra-light)}
+.btn-ghost{background:transparent;color:var(--cream-dim);font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;padding:14px 32px;border:1px solid rgba(212,201,181,0.3);cursor:pointer;font-weight:400;transition:all 0.2s;border-radius:2px}
+.btn-ghost:hover{border-color:var(--cream-dim);color:var(--cream)}
+.hero-right{position:absolute;right:80px;top:50%;transform:translateY(-50%);z-index:2;display:flex;flex-direction:column;gap:32px;align-items:flex-end}
+.hero-stat-num{font-family:'Playfair Display',serif;font-size:44px;font-weight:400;color:var(--cream);line-height:1;text-align:right}
+.hero-stat-label{font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--terra-light);margin-top:3px;text-align:right}
+.hero-stat-divider{width:1px;height:32px;background:rgba(160,82,45,0.3);align-self:flex-end}
+.scroll-hint{position:absolute;bottom:140px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2}
+.scroll-text{font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(212,201,181,0.3)}
+.scroll-line{width:1px;height:32px;background:linear-gradient(to bottom,rgba(160,82,45,0.5),transparent);animation:scrollPulse 2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{opacity:0.4}50%{opacity:1}}
+
+.portal-banner{background:var(--cream-warm);border-top:2px solid var(--terra);border-bottom:1px solid var(--cream-dim);padding:16px 80px;display:flex;align-items:center;gap:20px}
+.portal-icon{width:30px;height:30px;background:var(--terra);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.portal-text strong{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--bark);display:block;margin-bottom:2px;font-weight:500}
+.portal-text span{font-size:11px;color:var(--stone)}
+
+.section{padding:100px 80px}
+.overline{display:inline-flex;align-items:center;gap:10px;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--terra);margin-bottom:16px;font-weight:400}
+.overline::before{content:'';display:block;width:24px;height:1px;background:var(--terra)}
+.section-title{font-family:'Playfair Display',serif;font-size:52px;font-weight:400;line-height:1.05;margin-bottom:24px;color:var(--bark)}
+.section-title em{font-style:italic;color:var(--terra)}
+.divider{width:48px;height:1px;background:var(--terra);margin-bottom:40px;opacity:0.5}
+
+/* COLUMN GROUPS */
+.column-group{margin-bottom:56px}
+.column-label{font-family:'Playfair Display',serif;font-size:13px;font-style:italic;color:var(--stone);letter-spacing:0.06em;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--cream-dim);display:flex;align-items:center;gap:12px}
+.column-label::before{content:'';display:block;width:20px;height:1px;background:var(--terra);opacity:0.5}
+
+.units-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.units-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.units-grid-1{display:grid;grid-template-columns:1fr;gap:14px;max-width:300px}
+
+.unit-card{background:var(--white);cursor:pointer;transition:all 0.3s;border:1px solid rgba(61,43,31,0.1);border-radius:4px;overflow:hidden}
+.unit-card:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(61,43,31,0.12)}
+.unit-card.duplicate{border-style:dashed;border-color:rgba(61,43,31,0.15)}
+.unit-thumb{height:160px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.unit-thumb-label{font-family:'Playfair Display',serif;font-size:13px;color:rgba(255,255,255,0.5);font-weight:400;font-style:italic;text-align:center;padding:0 12px;line-height:1.4;position:relative;z-index:1}
+.unit-badge{position:absolute;top:10px;left:10px;background:var(--terra);color:var(--cream);font-size:7px;letter-spacing:0.18em;text-transform:uppercase;padding:3px 8px;font-weight:500;border-radius:2px}
+.unit-badge.dupe{background:var(--stone)}
+.unit-info{padding:18px}
+.unit-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:400;color:var(--bark);margin-bottom:2px}
+.unit-type{font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;font-weight:400}
+.unit-specs{display:flex;gap:8px;font-size:10px;color:var(--stone);letter-spacing:0.03em;margin-bottom:14px;flex-wrap:wrap}
+.unit-sqft{font-size:12px;font-weight:500;color:var(--bark);margin-bottom:10px}
+.unit-actions{display:flex;gap:6px;flex-wrap:wrap}
+.unit-btn{font-size:8px;letter-spacing:0.12em;text-transform:uppercase;padding:6px 11px;border:1px solid var(--bark);color:var(--bark);background:transparent;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:400;transition:all 0.2s;border-radius:2px}
+.unit-btn:hover{background:var(--bark);color:var(--cream)}
+.unit-btn.terra{border-color:var(--terra);color:var(--terra)}
+.unit-btn.terra:hover{background:var(--terra);color:var(--cream)}
+
+.dupe-note{font-size:9px;color:var(--stone);font-style:italic;margin-top:6px}
+
+/* ACCORDION */
+.accordion-item{border:1px solid rgba(61,43,31,0.1);overflow:hidden;margin-bottom:2px;border-radius:4px}
+.accordion-header{padding:16px 24px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:background 0.2s}
+.accordion-header.dark{background:var(--bark)}
+.accordion-header.dark:hover{background:var(--bark-mid)}
+.accordion-header.light{background:var(--cream-warm);border-left:3px solid var(--terra)}
+.accordion-header.light:hover{background:var(--cream-dim)}
+.accordion-header.stone{background:#6b5744;border-left:3px solid var(--stone)}
+.accordion-header.stone:hover{background:#7a6252}
+.acc-eyebrow{font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--terra-light);margin-bottom:3px}
+.acc-eyebrow.light-eye{color:var(--stone)}
+.acc-title-dark{font-family:'Playfair Display',serif;font-size:18px;color:var(--cream);font-weight:400}
+.acc-title-light{font-family:'Playfair Display',serif;font-size:18px;color:var(--bark);font-weight:400}
+.acc-arrow{font-size:20px;font-weight:300}
+.acc-sqft{font-size:10px;color:var(--cream-dim);margin-top:1px;font-style:italic}
+.acc-sqft-light{font-size:10px;color:var(--stone);margin-top:1px;font-style:italic}
+.acc-body{display:none;padding:24px;background:var(--white)}
+.materials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.material-card{border:1px solid rgba(61,43,31,0.1);padding:18px;cursor:pointer;transition:all 0.2s;text-align:center;border-radius:4px}
+.material-card:hover{border-color:var(--terra);background:rgba(160,82,45,0.03)}
+.material-icon{width:36px;height:36px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center}
+.material-name{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--bark);margin-bottom:3px;font-weight:500}
+.material-meta{font-size:10px;color:var(--stone)}
+.material-dl{margin-top:8px;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--terra);font-weight:400}
+.dupe-notice{background:var(--cream-warm);border:1px solid var(--cream-dim);border-left:3px solid var(--stone);padding:10px 16px;border-radius:2px;margin-bottom:16px;font-size:11px;color:var(--stone);font-style:italic}
+
+.contact-section{background:var(--bark);padding:100px 80px;position:relative;overflow:hidden}
+.contact-texture{position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 1px 1px,var(--terra-light) 1px,transparent 0);background-size:32px 32px}
+.contact-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact-text p{font-size:13px;line-height:1.9;color:rgba(212,201,181,0.6);margin-bottom:32px}
+.contact-detail{display:flex;flex-direction:column;gap:10px;margin-top:28px}
+.contact-row{display:flex;gap:16px;align-items:baseline}
+.contact-label{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--terra-light);min-width:80px;font-weight:400}
+.contact-val{font-size:13px;color:var(--cream-dim)}
+.contact-form{display:flex;flex-direction:column;gap:14px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-input{background:rgba(255,255,255,0.06);border:1px solid rgba(212,201,181,0.2);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:12px;padding:12px 16px;outline:none;transition:border-color 0.2s;width:100%;border-radius:2px}
+.form-input::placeholder{color:rgba(212,201,181,0.3);font-size:11px}
+.form-input:focus{border-color:var(--terra-light)}
+select.form-input option{background:#3d2b1f}
+.form-submit{background:var(--terra);color:var(--cream);border:none;font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;padding:14px 32px;cursor:pointer;font-weight:500;transition:all 0.2s;align-self:flex-start;border-radius:2px;margin-top:4px}
+.form-submit:hover{background:var(--terra-light)}
+
+footer{background:#1e1108;padding:28px 80px;display:flex;align-items:center;justify-content:space-between}
+.footer-logo{font-family:'Playfair Display',serif;font-size:14px;font-weight:400;color:var(--cream-dim);letter-spacing:0.08em}
+.footer-logo span{color:var(--terra-light);font-style:italic}
+.footer-copy{font-size:10px;color:rgba(212,201,181,0.25);letter-spacing:0.08em}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(212,201,181,0.3);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--terra-light)}
+
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(30,17,8,0.92);z-index:200;align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal{background:var(--white);width:92%;max-width:960px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;border-radius:4px}
+.modal-header{background:var(--bark);padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.modal-eyebrow{font-size:8px;letter-spacing:0.25em;text-transform:uppercase;color:var(--terra-light);margin-bottom:4px}
+.modal-title{font-family:'Playfair Display',serif;font-size:22px;color:var(--cream);font-weight:400}
+.modal-sqft{font-size:11px;color:var(--cream-dim);font-style:italic;margin-top:2px}
+.modal-close{background:transparent;border:1px solid rgba(212,201,181,0.25);color:var(--cream-dim);width:36px;height:36px;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;font-weight:300;flex-shrink:0;border-radius:2px}
+.modal-close:hover{background:rgba(255,255,255,0.08)}
+.modal-tabs{display:flex;border-bottom:1px solid rgba(61,43,31,0.1);flex-shrink:0}
+.modal-tab{padding:14px 24px;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#9ca3af;cursor:pointer;border:none;border-bottom:2px solid transparent;font-family:'DM Sans',sans-serif;font-weight:400;transition:all 0.2s;background:transparent}
+.modal-tab.active{color:var(--bark);border-bottom-color:var(--terra)}
+.modal-tab:hover{color:var(--bark)}
+.modal-body{flex:1;overflow-y:auto}
+.modal-panel{display:none;padding:32px}
+.modal-panel.active{display:block}
+.modal-panel.pdf-panel{padding:0}
+.tour-embed{width:100%;height:460px;border:none;display:block;margin-bottom:16px}
+.pdf-embed{width:100%;height:540px;border:none;display:block}
+.pdf-download-bar{padding:14px 28px;background:var(--cream-warm);border-top:1px solid var(--cream-dim);display:flex;align-items:center;justify-content:space-between}
+.pdf-download-bar span{font-size:11px;color:var(--stone)}
+.pdf-dl-btn{background:var(--bark);color:var(--cream);border:none;font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;padding:10px 20px;cursor:pointer;font-weight:400;text-decoration:none;display:inline-block;border-radius:2px}
+.pdf-dl-btn:hover{background:var(--bark-mid)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">61 <span>Montebello</span></div>
+  <div class="nav-links">
+    <a href="#residences">Residences</a>
+    <a href="#materials">Materials</a>
+    <a href="#inquire">Inquire</a>
+  </div>
+  <button class="nav-cta" onclick="document.getElementById('inquire').scrollIntoView({behavior:'smooth'})">Request Access</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-texture"></div>
+  <div class="hero-circle"></div>
+  <div class="hero-circle2"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Luxury Condominiums — Jamaica Plain, Boston</div>
+    <h1 class="hero-title">61<br><em>Montebello</em></h1>
+    <p class="hero-sub">Jamaica Plain, Boston MA</p>
+    <p class="hero-desc">Eight distinctive residences across three columns — from a sweeping triplex to private floor-through condominiums. Experience each home through immersive 3D tours and a complete suite of property materials.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('residences').scrollIntoView({behavior:'smooth'})">Explore Residences</button>
+      <button class="btn-ghost" onclick="document.getElementById('materials').scrollIntoView({behavior:'smooth'})">View Materials</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div><div class="hero-stat-num">8</div><div class="hero-stat-label">Residences</div></div>
+    <div class="hero-stat-divider"></div>
+    <div><div class="hero-stat-num">3</div><div class="hero-stat-label">Columns</div></div>
+    <div class="hero-stat-divider"></div>
+    <div><div class="hero-stat-num">5</div><div class="hero-stat-label">3D Tours</div></div>
+  </div>
+  <div class="hero-arc"></div>
+  <div class="scroll-hint"><span class="scroll-text">Scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<div class="portal-banner">
+  <div class="portal-icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#f7f2ea" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="portal-text">
+    <strong>Client Media Portal</strong>
+    <span>All ordered materials — 3D tours, floor plans, and property reports — are accessible directly from each residence below.</span>
+  </div>
+</div>
+
+<section class="section" id="residences">
+  <div class="overline">Eight Residences</div>
+  <h2 class="section-title">The <em>Residences</em></h2>
+  <div class="divider"></div>
+
+  <!-- TRIPLEX -->
+  <div class="column-group">
+    <div class="column-label">The Triplex</div>
+    <div class="units-grid-1">
+      <div class="unit-card" onclick="openModal('triplex')">
+        <div class="unit-thumb" style="background:linear-gradient(145deg,#5c2d14,#3d2b1f)">
+          <div class="unit-thumb-label">The Triplex</div>
+          <div class="unit-badge">Available</div>
+        </div>
+        <div class="unit-info">
+          <div class="unit-name">The Triplex</div>
+          <div class="unit-type">Multi-Level Condominium</div>
+          <div class="unit-sqft">1,968 sq ft</div>
+          <div class="unit-specs"><span>Multi-Level</span><span>·</span><span>61 Montebello</span></div>
+          <div class="unit-actions">
+            <button class="unit-btn terra" onclick="event.stopPropagation();openModal('triplex','tour')">3D Tour</button>
+            <button class="unit-btn" onclick="event.stopPropagation();openModal('triplex','plans')">Floor Plan</button>
+            <button class="unit-btn" onclick="event.stopPropagation();openModal('triplex','report')">Report</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT REAR COLUMN -->
+  <div class="column-group">
+    <div class="column-label">Right Rear Column — Floors 1–3</div>
+    <div class="units-grid-3">
+
+      <div class="unit-card" onclick="openModal('rr1')">
+        <div class="unit-thumb" style="background:linear-gradient(145deg,#7a3e20,#5c2d14)">
+          <div class="unit-thumb-label">Right Rear<br>Floor 1</div>
+          <div class="unit-badge">Available</div>
+        </div>
+        <div class="unit-info">
+          <div class="unit-name">Right Rear — Floor 1</div>
+          <div class="unit-type">Luxury Condominium</div>
+          <div class="unit-sqft">1,055 sq ft</div>
+          <div class="unit-specs"><span>Floor 1</span><span>·</span><span>Right Rear</span></div>
+          <div class="unit-actions">
+            <button class="unit-btn terra" onclick="event.stopPropagation();openModal('rr1','tour')">3D Tour</button>
+            <button class="unit-btn" onclick="event.stopPropagation();openModal('rr1','plans')">Floor Plan</button>
+            <button class="unit-btn" onclick="event.stopPropagation();openModal('rr1','report')">Report</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="unit-card" onclick="openModal('rr2')">
+        <div class="unit-thumb" style="background:linear-gradient(145deg,#a0522d,#7a3e20)">
+          <div class="unit-thumb-label">Right Rear<br>Floor 2</div>
+          <div class="unit-badge">Available</div>
+        </div>
+        <div class="unit-info">
+          <div class="unit-name">Right Rear — Floor 2</div>
+          <div class="unit-type">Luxury Condominium</div>
+          <div class="unit-sqft">1,209 sq ft</div>
+          <div class="unit-specs"><span>Floor 2</span><span>·</span><span>Right Rear</span></div>
+          <div class="unit-actions">
+            <button class="unit-btn terra" onclick="event.stopPropagation();openModal('rr2','tour')">3D Tour</button>
+            <button class="unit-btn" onclick="event.stopPropagation();openModal('rr2','plans')">Floor Plan</button>
+            <button class="unit-btn" onclick="event.stopPropagation();openModal('rr2','report')">Report</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="unit-card" onclick="openModal('rr3')">
+        <div class="unit-thumb" style="background:linear-gradient(145deg,#c97a4a,#a0522d)">
+          <div class="unit-thumb-label">Right Rear<br>Floor 3</div>
+          <div class="unit-badge">Available</div>
+        </div>
+        <div class="unit-info">
+          <div class="unit-name">Right Rear — Floor 3</div>
+          <div class="unit-type">Luxury Condominium</div>
+          <div class="unit-sqft">1,155 sq ft</div>
+          <div class="unit-specs"><span>Floor 3</span><span>·</span><span>Right Rear</span></div>
+          <div class="unit-actions">
+            <button class="unit-btn terra" onclick="event.stopPropagation();openModal('rr3','tour')">3D Tour</button>
+            <button class="unit-btn" onclick="event.stopPropagation();openModal('rr3','plans')">Floor Plan</button>
+            <button class="unit-btn" onclick="event.stopPropagation();openModal('rr3','report')">Report</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LEFT COLUMN -->
+  <div class="column-group">
+    <div class="column-label">Left Column — Floors 1–4</div>
+    <div class="units-grid-4">
+
+      <div class="unit-card duplicate" onclick="openModal('lf1')">
+        <div class="unit-thumb" style="background:linear-gradient(145deg,#6b5744,#3d2b1f)">
+          <div class="unit-thumb-label">Left Column<br>Floor 1</div>
+          <div class="unit-badge dupe">Available</div>
+        </div>
+        <div class="unit-info">
+          <div class="unit-name">Left Column — Floor 1</div>
+          <div class="unit-type">Luxury Condominium</div>
+          <div class="unit-sqft">1,360 sq ft</div>
+          <div class="unit-specs"><span>Floor 1</span><span>·</span><span>Left Column</span></div>
+          <div class="unit-actions">
+            <button class="unit-btn terra" onclick="event.stopPropagation();openModal('lf1','tour')">3D Tour</button>
+            <button class="unit-btn" onclick="event.stopPropagation();openModal('lf1','plans')">Floor Plan</button>
+            <button class="unit-btn" onclick="event.stopPropagation();openModal('lf1','report')">Report</button>
+          </div>
+          <div class="dupe-note">Same layout as Floor 4 — representative tour</div>
+        </div>
+      </div>
+
+      <div class="unit-card duplicate" onclick="openModal('lf2')">
+        <div class="unit-thumb" style="background:linear-gradient(145deg,#7a6252,#4a3525)">
+          <div class="unit-thumb-label">Left Column<br>Floor 2</div>
+          <div class="unit-badge dupe">Available</div>
+        </div>
+        <div class="unit-info">
+          <div class="unit-name">Left Column — Floor 2</div>
+          <div class="unit-type">Luxury Condominium</div>
+          <div class="unit-sqft">1,360 sq ft</div>
+          <div class="unit-specs"><span>Floor 2</span><span>·</span><span>Left Column</span></div>
+          <div class="unit-actions">
+            <button class="unit-btn terra" onclick="event.stopPropagation();openModal('lf2','tour')">3D Tour</button>
+            <button class="unit-btn" onclick="event.stopPropagation();openModal('lf2','plans')">Floor Plan</button>
+            <button class="unit-btn" onclick="event.stopPropagation();openModal('lf2','report')">Report</button>
+          </div>
+          <div class="dupe-note">Same layout as Floor 4 — representative tour</div>
+        </div>
+      </div>
+
+      <div class="unit-card duplicate" onclick="openModal('lf3')">
+        <div class="unit-thumb" style="background:linear-gradient(145deg,#8a7060,#5a3e2f)">
+          <div class="unit-thumb-label">Left Column<br>Floor 3</div>
+          <div class="unit-badge dupe">Available</div>
+        </div>
+        <div class="unit-info">
+          <div class="unit-name">Left Column — Floor 3</div>
+          <div class="unit-type">Luxury Condominium</div>
+          <div class="unit-sqft">1,360 sq ft</div>
+          <div class="unit-specs"><span>Floor 3</span><span>·</span><span>Left Column</span></div>
+          <div class="unit-actions">
+            <button class="unit-btn terra" onclick="event.stopPropagation();openModal('lf3','tour')">3D Tour</button>
+            <button class="unit-btn" onclick="event.stopPropagation();openModal('lf3','plans')">Floor Plan</button>
+            <button class="unit-btn" onclick="event.stopPropagation();openModal('lf3','report')">Report</button>
+          </div>
+          <div class="dupe-note">Same layout as Floor 4 — representative tour</div>
+        </div>
+      </div>
+
+      <div class="unit-card" onclick="openModal('lf4')">
+        <div class="unit-thumb" style="background:linear-gradient(145deg,#8a7560,#5c2d14)">
+          <div class="unit-thumb-label">Left Column<br>Floor 4</div>
+          <div class="unit-badge">Available</div>
+        </div>
+        <div class="unit-info">
+          <div class="unit-name">Left Column — Floor 4</div>
+          <div class="unit-type">Luxury Condominium</div>
+          <div class="unit-sqft">1,360 sq ft</div>
+          <div class="unit-specs"><span>Floor 4</span><span>·</span><span>Left Column</span></div>
+          <div class="unit-actions">
+            <button class="unit-btn terra" onclick="event.stopPropagation();openModal('lf4','tour')">3D Tour</button>
+            <button class="unit-btn" onclick="event.stopPropagation();openModal('lf4','plans')">Floor Plan</button>
+            <button class="unit-btn" onclick="event.stopPropagation();openModal('lf4','report')">Report</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MATERIALS -->
+<section class="section" style="background:var(--cream-warm)" id="materials">
+  <div class="overline">Client Portal</div>
+  <h2 class="section-title">Your <em>Deliverables</em></h2>
+  <div class="divider"></div>
+  <p style="font-size:13px;color:var(--stone);max-width:560px;line-height:1.85;margin-bottom:48px">All media produced for 61 Montebello Road is organized below by residence. Left Column Floors 1–3 share the same layout and tour as Floor 4.</p>
+
+  <!-- Triplex -->
+  <div class="accordion-item">
+    <div class="accordion-header dark" onclick="toggleAcc('acc-triplex')">
+      <div><div class="acc-eyebrow">Residence</div><div class="acc-title-dark">The Triplex</div><div class="acc-sqft">1,968 sq ft</div></div>
+      <div class="acc-arrow" id="acc-triplex-arrow" style="color:var(--terra-light)">+</div>
+    </div>
+    <div class="acc-body" id="acc-triplex">
+      <div class="materials-grid">
+        <div class="material-card" onclick="openModal('triplex','tour')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#a0522d" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="material-name">3D Tour</div><div class="material-meta">Triplex Walk-Through</div><div class="material-dl">View Tour →</div></div>
+        <div class="material-card" onclick="openModal('triplex','plans')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M3 3h18v18H3z" stroke="#a0522d" stroke-width="1.5"/><path d="M8 3v18M16 3v18M3 8h18M3 16h18" stroke="#a0522d" stroke-width="0.75" opacity="0.5"/></svg></div><div class="material-name">Floor Plan</div><div class="material-meta">Triplex — PDF</div><div class="material-dl">View & Download →</div></div>
+        <div class="material-card" onclick="openModal('triplex','report')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="material-name">Property Report</div><div class="material-meta">Triplex — PDF</div><div class="material-dl">View & Download →</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RR1 -->
+  <div class="accordion-item">
+    <div class="accordion-header light" onclick="toggleAcc('acc-rr1')">
+      <div><div class="acc-eyebrow">Right Rear Column</div><div class="acc-title-light">Floor 1</div><div class="acc-sqft-light">1,055 sq ft</div></div>
+      <div class="acc-arrow" id="acc-rr1-arrow" style="color:var(--bark)">+</div>
+    </div>
+    <div class="acc-body" id="acc-rr1">
+      <div class="materials-grid">
+        <div class="material-card" onclick="openModal('rr1','tour')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#a0522d" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="material-name">3D Tour</div><div class="material-meta">Right Rear Fl 1</div><div class="material-dl">View Tour →</div></div>
+        <div class="material-card" onclick="openModal('rr1','plans')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M3 3h18v18H3z" stroke="#a0522d" stroke-width="1.5"/><path d="M8 3v18M16 3v18M3 8h18M3 16h18" stroke="#a0522d" stroke-width="0.75" opacity="0.5"/></svg></div><div class="material-name">Floor Plan</div><div class="material-meta">Right Rear Fl 1 — PDF</div><div class="material-dl">View & Download →</div></div>
+        <div class="material-card" onclick="openModal('rr1','report')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="material-name">Property Report</div><div class="material-meta">Right Rear Fl 1 — PDF</div><div class="material-dl">View & Download →</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RR2 -->
+  <div class="accordion-item">
+    <div class="accordion-header light" onclick="toggleAcc('acc-rr2')">
+      <div><div class="acc-eyebrow">Right Rear Column</div><div class="acc-title-light">Floor 2</div><div class="acc-sqft-light">1,209 sq ft</div></div>
+      <div class="acc-arrow" id="acc-rr2-arrow" style="color:var(--bark)">+</div>
+    </div>
+    <div class="acc-body" id="acc-rr2">
+      <div class="materials-grid">
+        <div class="material-card" onclick="openModal('rr2','tour')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#a0522d" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="material-name">3D Tour</div><div class="material-meta">Right Rear Fl 2</div><div class="material-dl">View Tour →</div></div>
+        <div class="material-card" onclick="openModal('rr2','plans')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M3 3h18v18H3z" stroke="#a0522d" stroke-width="1.5"/><path d="M8 3v18M16 3v18M3 8h18M3 16h18" stroke="#a0522d" stroke-width="0.75" opacity="0.5"/></svg></div><div class="material-name">Floor Plan</div><div class="material-meta">Right Rear Fl 2 — PDF</div><div class="material-dl">View & Download →</div></div>
+        <div class="material-card" onclick="openModal('rr2','report')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="material-name">Property Report</div><div class="material-meta">Right Rear Fl 2 — PDF</div><div class="material-dl">View & Download →</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RR3 -->
+  <div class="accordion-item">
+    <div class="accordion-header light" onclick="toggleAcc('acc-rr3')">
+      <div><div class="acc-eyebrow">Right Rear Column</div><div class="acc-title-light">Floor 3</div><div class="acc-sqft-light">1,155 sq ft</div></div>
+      <div class="acc-arrow" id="acc-rr3-arrow" style="color:var(--bark)">+</div>
+    </div>
+    <div class="acc-body" id="acc-rr3">
+      <div class="materials-grid">
+        <div class="material-card" onclick="openModal('rr3','tour')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#a0522d" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="material-name">3D Tour</div><div class="material-meta">Right Rear Fl 3</div><div class="material-dl">View Tour →</div></div>
+        <div class="material-card" onclick="openModal('rr3','plans')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M3 3h18v18H3z" stroke="#a0522d" stroke-width="1.5"/><path d="M8 3v18M16 3v18M3 8h18M3 16h18" stroke="#a0522d" stroke-width="0.75" opacity="0.5"/></svg></div><div class="material-name">Floor Plan</div><div class="material-meta">Right Rear Fl 3 — PDF</div><div class="material-dl">View & Download →</div></div>
+        <div class="material-card" onclick="openModal('rr3','report')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="material-name">Property Report</div><div class="material-meta">Right Rear Fl 3 — PDF</div><div class="material-dl">View & Download →</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LF1 -->
+  <div class="accordion-item">
+    <div class="accordion-header stone" onclick="toggleAcc('acc-lf1')">
+      <div><div class="acc-eyebrow light-eye">Left Column — Representative Tour</div><div class="acc-title-dark">Floor 1</div><div class="acc-sqft">1,360 sq ft</div></div>
+      <div class="acc-arrow" id="acc-lf1-arrow" style="color:var(--cream-dim)">+</div>
+    </div>
+    <div class="acc-body" id="acc-lf1">
+      <div class="dupe-notice">Same floor plan and layout as Left Column Floor 4. Tour shown is the Floor 4 representative scan.</div>
+      <div class="materials-grid">
+        <div class="material-card" onclick="openModal('lf1','tour')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#a0522d" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="material-name">3D Tour</div><div class="material-meta">Representative — Fl 4</div><div class="material-dl">View Tour →</div></div>
+        <div class="material-card" onclick="openModal('lf1','plans')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M3 3h18v18H3z" stroke="#a0522d" stroke-width="1.5"/><path d="M8 3v18M16 3v18M3 8h18M3 16h18" stroke="#a0522d" stroke-width="0.75" opacity="0.5"/></svg></div><div class="material-name">Floor Plan</div><div class="material-meta">Left Column — PDF</div><div class="material-dl">View & Download →</div></div>
+        <div class="material-card" onclick="openModal('lf1','report')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="material-name">Property Report</div><div class="material-meta">Left Column — PDF</div><div class="material-dl">View & Download →</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LF2 -->
+  <div class="accordion-item">
+    <div class="accordion-header stone" onclick="toggleAcc('acc-lf2')">
+      <div><div class="acc-eyebrow light-eye">Left Column — Representative Tour</div><div class="acc-title-dark">Floor 2</div><div class="acc-sqft">1,360 sq ft</div></div>
+      <div class="acc-arrow" id="acc-lf2-arrow" style="color:var(--cream-dim)">+</div>
+    </div>
+    <div class="acc-body" id="acc-lf2">
+      <div class="dupe-notice">Same floor plan and layout as Left Column Floor 4. Tour shown is the Floor 4 representative scan.</div>
+      <div class="materials-grid">
+        <div class="material-card" onclick="openModal('lf2','tour')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#a0522d" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="material-name">3D Tour</div><div class="material-meta">Representative — Fl 4</div><div class="material-dl">View Tour →</div></div>
+        <div class="material-card" onclick="openModal('lf2','plans')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M3 3h18v18H3z" stroke="#a0522d" stroke-width="1.5"/><path d="M8 3v18M16 3v18M3 8h18M3 16h18" stroke="#a0522d" stroke-width="0.75" opacity="0.5"/></svg></div><div class="material-name">Floor Plan</div><div class="material-meta">Left Column — PDF</div><div class="material-dl">View & Download →</div></div>
+        <div class="material-card" onclick="openModal('lf2','report')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="material-name">Property Report</div><div class="material-meta">Left Column — PDF</div><div class="material-dl">View & Download →</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LF3 -->
+  <div class="accordion-item">
+    <div class="accordion-header stone" onclick="toggleAcc('acc-lf3')">
+      <div><div class="acc-eyebrow light-eye">Left Column — Representative Tour</div><div class="acc-title-dark">Floor 3</div><div class="acc-sqft">1,360 sq ft</div></div>
+      <div class="acc-arrow" id="acc-lf3-arrow" style="color:var(--cream-dim)">+</div>
+    </div>
+    <div class="acc-body" id="acc-lf3">
+      <div class="dupe-notice">Same floor plan and layout as Left Column Floor 4. Tour shown is the Floor 4 representative scan.</div>
+      <div class="materials-grid">
+        <div class="material-card" onclick="openModal('lf3','tour')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#a0522d" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="material-name">3D Tour</div><div class="material-meta">Representative — Fl 4</div><div class="material-dl">View Tour →</div></div>
+        <div class="material-card" onclick="openModal('lf3','plans')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M3 3h18v18H3z" stroke="#a0522d" stroke-width="1.5"/><path d="M8 3v18M16 3v18M3 8h18M3 16h18" stroke="#a0522d" stroke-width="0.75" opacity="0.5"/></svg></div><div class="material-name">Floor Plan</div><div class="material-meta">Left Column — PDF</div><div class="material-dl">View & Download →</div></div>
+        <div class="material-card" onclick="openModal('lf3','report')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="material-name">Property Report</div><div class="material-meta">Left Column — PDF</div><div class="material-dl">View & Download →</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LF4 -->
+  <div class="accordion-item">
+    <div class="accordion-header stone" onclick="toggleAcc('acc-lf4')">
+      <div><div class="acc-eyebrow light-eye">Left Column</div><div class="acc-title-dark">Floor 4</div><div class="acc-sqft">1,360 sq ft</div></div>
+      <div class="acc-arrow" id="acc-lf4-arrow" style="color:var(--cream-dim)">+</div>
+    </div>
+    <div class="acc-body" id="acc-lf4">
+      <div class="materials-grid">
+        <div class="material-card" onclick="openModal('lf4','tour')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#a0522d" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="material-name">3D Tour</div><div class="material-meta">Left Column Fl 4</div><div class="material-dl">View Tour →</div></div>
+        <div class="material-card" onclick="openModal('lf4','plans')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M3 3h18v18H3z" stroke="#a0522d" stroke-width="1.5"/><path d="M8 3v18M16 3v18M3 8h18M3 16h18" stroke="#a0522d" stroke-width="0.75" opacity="0.5"/></svg></div><div class="material-name">Floor Plan</div><div class="material-meta">Left Column Fl 4 — PDF</div><div class="material-dl">View & Download →</div></div>
+        <div class="material-card" onclick="openModal('lf4','report')"><div class="material-icon"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#a0522d" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="material-name">Property Report</div><div class="material-meta">Left Column Fl 4 — PDF</div><div class="material-dl">View & Download →</div></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="contact-section" id="inquire">
+  <div class="contact-texture"></div>
+  <div class="contact-inner">
+    <div class="contact-text">
+      <div class="overline" style="color:var(--terra-light)">Private Inquiries</div>
+      <h2 class="section-title" style="color:var(--cream)">Request<br><em>Information</em></h2>
+      <div class="divider" style="background:var(--terra-light);opacity:0.5"></div>
+      <p>For private showings, access to additional materials, or to discuss 61 Montebello in detail, we invite you to reach out directly.</p>
+      <div class="contact-detail">
+        <div class="contact-row"><span class="contact-label">Address</span><span class="contact-val">61 Montebello Road, Jamaica Plain, Boston MA</span></div>
+        <div class="contact-row"><span class="contact-label">Units</span><span class="contact-val">8 Residences — All Available</span></div>
+        <div class="contact-row"><span class="contact-label">Media</span><span class="contact-val">3DVLS — The 3D Virtual Listing Service</span></div>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="return false">
+      <div class="form-row">
+        <input class="form-input" type="text" placeholder="First Name">
+        <input class="form-input" type="text" placeholder="Last Name">
+      </div>
+      <input class="form-input" type="email" placeholder="Email Address">
+      <input class="form-input" type="tel" placeholder="Phone Number">
+      <select class="form-input">
+        <option value="">Interested In...</option>
+        <option>The Triplex</option>
+        <option>Right Rear — Floor 1</option>
+        <option>Right Rear — Floor 2</option>
+        <option>Right Rear — Floor 3</option>
+        <option>Left Column — Floor 1</option>
+        <option>Left Column — Floor 2</option>
+        <option>Left Column — Floor 3</option>
+        <option>Left Column — Floor 4</option>
+        <option>All Residences</option>
+      </select>
+      <textarea class="form-input" rows="3" placeholder="Message (optional)" style="resize:vertical"></textarea>
+      <button class="form-submit" type="submit">Submit Inquiry</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">61 <span>Montebello</span></div>
+  <div class="footer-copy">© 2025 · Media by 3DVLS</div>
+  <div class="footer-links">
+    <a href="#residences">Residences</a>
+    <a href="#inquire">Inquire</a>
+    <a href="https://3dvls.com" target="_blank">3DVLS.com</a>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modal" onclick="closeModalBg(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-eyebrow" id="modal-eyebrow">Residence</div>
+        <div class="modal-title" id="modal-title">The Triplex</div>
+        <div class="modal-sqft" id="modal-sqft"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-tabs">
+      <button class="modal-tab active" id="tab-btn-tour" onclick="switchTab('tour')">3D Tour</button>
+      <button class="modal-tab" id="tab-btn-plans" onclick="switchTab('plans')">Floor Plan</button>
+      <button class="modal-tab" id="tab-btn-report" onclick="switchTab('report')">Property Report</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-panel active" id="tab-tour">
+        <iframe class="tour-embed" id="tour-iframe" src="" allowfullscreen allow="xr-spatial-tracking"></iframe>
+        <p style="font-size:11px;color:#9ca3af;letter-spacing:0.04em">Navigate using your mouse or touch. Use the dollhouse icon for a full spatial overview.</p>
+      </div>
+      <div class="modal-panel pdf-panel" id="tab-plans">
+        <iframe class="pdf-embed" id="plans-iframe" src=""></iframe>
+        <div class="pdf-download-bar"><span id="plans-label">Floor Plan PDF</span><a class="pdf-dl-btn" id="plans-dl" href="#" download>Download PDF</a></div>
+      </div>
+      <div class="modal-panel pdf-panel" id="tab-report">
+        <iframe class="pdf-embed" id="report-iframe" src=""></iframe>
+        <div class="pdf-download-bar"><span id="report-label">Property Report PDF</span><a class="pdf-dl-btn" id="report-dl" href="#" download>Download PDF</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const data = {
+  triplex:{eyebrow:'Residence',title:'The Triplex',sqft:'1,968 sq ft',tour:'https://my.matterport.com/show/?m=9fNXKQ4TqEK&mls=1',plans:'assets/floor-plans/61t.pdf',report:'assets/floor-plans/61t.pdf'},
+  rr1:{eyebrow:'Right Rear Column',title:'Floor 1',sqft:'1,055 sq ft',tour:'https://my.matterport.com/show/?m=jiaHgmDipRc&mls=1',plans:'assets/floor-plans/61rrf1.pdf',report:'assets/floor-plans/61rrf1.pdf'},
+  rr2:{eyebrow:'Right Rear Column',title:'Floor 2',sqft:'1,209 sq ft',tour:'https://my.matterport.com/show/?m=CCDqx92fr7U&mls=1',plans:'assets/floor-plans/61rrf2.pdf',report:'assets/floor-plans/61rrf2.pdf'},
+  rr3:{eyebrow:'Right Rear Column',title:'Floor 3',sqft:'1,155 sq ft',tour:'https://my.matterport.com/show/?m=KevbR12LXAX&mls=1',plans:'assets/floor-plans/61rrf3.pdf',report:'assets/floor-plans/61rrf3.pdf'},
+  lf1:{eyebrow:'Left Column',title:'Floor 1',sqft:'1,360 sq ft',tour:'https://my.matterport.com/show/?m=D8v8LFPUm4V&mls=1',plans:'assets/floor-plans/61lf4.pdf',report:'assets/floor-plans/61lf4.pdf'},
+  lf2:{eyebrow:'Left Column',title:'Floor 2',sqft:'1,360 sq ft',tour:'https://my.matterport.com/show/?m=D8v8LFPUm4V&mls=1',plans:'assets/floor-plans/61lf4.pdf',report:'assets/floor-plans/61lf4.pdf'},
+  lf3:{eyebrow:'Left Column',title:'Floor 3',sqft:'1,360 sq ft',tour:'https://my.matterport.com/show/?m=D8v8LFPUm4V&mls=1',plans:'assets/floor-plans/61lf4.pdf',report:'assets/floor-plans/61lf4.pdf'},
+  lf4:{eyebrow:'Left Column',title:'Floor 4',sqft:'1,360 sq ft',tour:'https://my.matterport.com/show/?m=D8v8LFPUm4V&mls=1',plans:'assets/floor-plans/61lf4.pdf',report:'assets/floor-plans/61lf4.pdf'}
+};
+
+let currentUnit = null;
+
+function openModal(unit, tab) {
+  currentUnit = unit;
+  const d = data[unit];
+  document.getElementById('modal-eyebrow').textContent = d.eyebrow;
+  document.getElementById('modal-title').textContent = d.title;
+  document.getElementById('modal-sqft').textContent = d.sqft;
+  document.getElementById('tour-iframe').src = '';
+  document.getElementById('plans-iframe').src = '';
+  document.getElementById('report-iframe').src = '';
+  document.getElementById('modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  switchTab(tab || 'tour');
+}
+
+function switchTab(tab) {
+  ['tour','plans','report'].forEach(t => {
+    document.getElementById('tab-' + t).classList.toggle('active', t === tab);
+    document.getElementById('tab-btn-' + t).classList.toggle('active', t === tab);
+  });
+  const d = data[currentUnit];
+  if (tab === 'tour') {
+    document.getElementById('tour-iframe').src = d.tour;
+  } else if (tab === 'plans') {
+    document.getElementById('plans-iframe').src = d.plans;
+    document.getElementById('plans-label').textContent = d.eyebrow + ' ' + d.title + ' — Floor Plan';
+    document.getElementById('plans-dl').href = d.plans;
+    document.getElementById('plans-dl').download = (d.eyebrow + '_' + d.title).replace(/\s/g,'_') + '_FloorPlan.pdf';
+  } else if (tab === 'report') {
+    document.getElementById('report-iframe').src = d.report;
+    document.getElementById('report-label').textContent = d.eyebrow + ' ' + d.title + ' — Property Report';
+    document.getElementById('report-dl').href = d.report;
+    document.getElementById('report-dl').download = (d.eyebrow + '_' + d.title).replace(/\s/g,'_') + '_Report.pdf';
+  }
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+  document.getElementById('tour-iframe').src = '';
+  document.getElementById('plans-iframe').src = '';
+  document.getElementById('report-iframe').src = '';
+  document.body.style.overflow = '';
+}
+
+function closeModalBg(e) { if (e.target === document.getElementById('modal')) closeModal(); }
+
+function toggleAcc(id) {
+  const body = document.getElementById(id);
+  const arrow = document.getElementById(id + '-arrow');
+  const open = body.style.display === 'block';
+  body.style.display = open ? 'none' : 'block';
+  arrow.textContent = open ? '+' : '−';
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>
